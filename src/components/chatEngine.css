@@ -1,0 +1,31 @@
+#ce-ice-breaker-gif {
+  margin: auto;
+}
+
+#new-chat-plus-button {
+  line-height: 10px !important;
+  border-radius: 5px !important;
+  background: none !important;
+  color: rgb(22 101 52) !important;
+  border: 2px solid rgb(22 101 52) !important;
+}
+
+.ce-chats-container,
+.ce-settings,
+input {
+  font-family: system-ui !important;
+}
+
+.ce-message-bubble,
+.ce-chat-unread-dot,
+#ce-send-message-button {
+  background: #5b21bc !important;
+}
+
+.ce-chat-form-container {
+  margin-bottom: 30px !important;
+}
+
+.ce-chat-title-container {
+  color: #5b21bc !important;
+}

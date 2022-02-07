@@ -11,6 +11,9 @@ import { authContext } from "../contexts/AuthContextProvider";
 // Components
 import Navbar from "./Navbar";
 
+// Styles (Custom styles for caht engine)
+import "../components/chatEngine.css";
+
 const Chats = () => {
   const [loading, setloading] = useState(true);
   const user = useContext(authContext);
@@ -63,18 +66,23 @@ const Chats = () => {
     history.push("/");
   };
 
-  if (!user || loading) return "loading...";
+  if (!user || loading)
+    return (
+      <div className="w-sreen h-screen flex items-center justify-center flex-col gap-4">
+        <div className="w-16 h-16 rounded-full border-8 border-violet-200 border-r-violet-800 animate-spin"></div>
+        <p className="text-lg font-bold text-violet-800">loading...</p>
+      </div>
+    );
 
   return (
     <>
       <Navbar logoutHandler={logoutHandler} />
-
-      <ChatEngine
-        height="calc(100vh - 3.5rem)"
-        projectID="3917d4e0-e5f4-48d3-96c6-36bb8aeb8a29"
-        userName={user.email}
-        userSecret={user.uid}
-      />
+        <ChatEngine
+          height="calc(100vh - 3.5rem)"
+          projectID="3917d4e0-e5f4-48d3-96c6-36bb8aeb8a29"
+          userName={user.email}
+          userSecret={user.uid}
+        />
     </>
   );
 };
